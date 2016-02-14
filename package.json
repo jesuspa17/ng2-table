@@ -1,5 +1,5 @@
 {
-  "name": "ng2-table",
+  "name": "ng2-editable-table",
   "version": "1.0.0-beta.0",
   "description": "angular2 table components",
   "scripts": {
@@ -41,10 +41,10 @@
     "file-loader": "0.8.5",
     "gulp": "3.9.1",
     "gulp-rimraf": "0.2.0",
-    "gulp-eslint": "1.1.1",
+    "gulp-eslint": "2.0.0",
     "gulp-size": "2.0.0",
     "gulp-tsc": "1.1.4",
-    "gulp-tslint": "4.3.1",
+    "gulp-tslint": "4.3.2",
     "html-loader": "0.4.0",
     "markdown-loader": "0.1.7",
     "marked": "0.3.5",
@@ -56,11 +56,11 @@
     "raw-loader": "0.5.1",
     "reflect-metadata": "0.1.2",
     "require-dir": "0.3.0",
-    "rxjs": "5.0.0-beta.2",
+    "rxjs": "5.0.0-beta.0",
     "ts-loader": "0.8.1",
     "tslint": "3.3.0",
     "typings": "0.6.8",
-    "typescript": "1.7.5",
+    "typescript": "1.8.0",
     "webpack": "1.12.13",
     "webpack-dev-server": "1.14.1",
     "zone.js": "0.5.14"
