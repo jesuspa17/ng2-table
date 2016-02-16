@@ -72,7 +72,7 @@ export class TableDemo implements OnInit {
     let sort: string = null;
 
     for (let i = 0; i < columns.length; i++) {
-      if (columns[i].sort !== '') {
+      if (columns[i].sort != '') {
         columnName = columns[i].name;
         sort = columns[i].sort;
       }
