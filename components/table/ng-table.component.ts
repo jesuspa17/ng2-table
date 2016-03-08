@@ -8,6 +8,17 @@ import {NgTableSorting} from './ng-table-sorting.directive';
   selector: 'ngTable, [ngTable]',
   inputs: ['rows', 'columns', 'config', 'id'],
   outputs: ['tableChanged'],
+  styles: [`
+    .table > thead > tr > th {
+      cursor: pointer;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  `],
   template: `
     <table class="table table-striped table-bordered dataTable"
            role="grid" style="width: 100%;">
