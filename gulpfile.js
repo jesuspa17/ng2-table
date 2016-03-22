@@ -18,10 +18,10 @@ gulp.paths = {
 
 require('require-dir')('./gulp-tasks');
 
-var clean = require('gulp-clean');
-gulp.task('clean', function () {
+var rimraf = require('gulp-rimraf');
+gulp.task('clean', function (cb) {
   return gulp.src('dist', {read: false})
-    .pipe(clean());
+    .pipe(rimraf());
 });
 
 gulp.task('default', function () {

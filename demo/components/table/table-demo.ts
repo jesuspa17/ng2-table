@@ -72,7 +72,7 @@ export class TableDemo implements OnInit {
     let sort: string = null;
 
     for (let i = 0; i < columns.length; i++) {
-      if (columns[i].sort != '') {
+      if (columns[i].sort !== '') {
         columnName = columns[i].name;
         sort = columns[i].sort;
       }
@@ -116,7 +116,11 @@ export class TableDemo implements OnInit {
     let filteredData = this.changeFilter(this.data, this.config);
     let sortedData = this.changeSort(filteredData, this.config);
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
-    for (var key in this._arr) if (!this.rows.find((row) => row.id == key)) delete this._arr[key];
+    for (i = 0; i < this._arr.length; i++) {
+      if (!this.rows.find((row) => row.id === this._arr[i])) {
+        delete this._arr[i];
+      }
+    }
     this.length = sortedData.length;
   }
 
@@ -159,9 +163,9 @@ export class TableDemo implements OnInit {
   ok(row: number, id: number) {
     console.log('ok id: ' + id);
     let newRow: Array<any> = this.setEditable(row, false, true);
-    let updateRow: any = this.data.find((row) => row.id == id);
-    for (var columnName in newRow) {
-      updateRow[columnName] = newRow[columnName];
+    let updateRow: any = this.data.find((rowAux) => rowAux.id === id);
+    for (i = 0; i < newRow.length; i++) {
+      updateRow[newRow[i]] = newRow[i];
     }
   }
 
@@ -172,10 +176,10 @@ export class TableDemo implements OnInit {
       for (let columnName in editableColumns) {
         if (editableColumns.hasOwnProperty(columnName)) {
           editableColumns[columnName].editable = value;
-          if (ok == true) {
+          if (ok === true) {
             editableColumns[columnName].data = editableColumns[columnName].auxValue;
             newRow[columnName] = editableColumns[columnName].auxValue;
-          } else if (ok == false) {
+          } else if (ok === false) {
             editableColumns[columnName].auxValue = editableColumns[columnName].data;
           }
         }
