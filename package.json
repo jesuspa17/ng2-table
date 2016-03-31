@@ -1,6 +1,6 @@
 {
   "name": "ng2-editable-table",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "angular2 table components",
   "scripts": {
     "deploy": "NODE_ENV=production webpack -p --progress --color --optimize-minimize --optimize-dedupe --optimize-occurence-order",
@@ -30,14 +30,15 @@
   "homepage": "https://github.com/valor-software/ng2-table#readme",
   "dependencies": {},
   "devDependencies": {
-    "angular2": "2.0.0-beta.11",
+    "angular2": "2.0.0-beta.13",
     "bootstrap": "3.3.6",
     "clean-webpack-plugin": "0.1.8",
-    "compression-webpack-plugin": "0.3.0",
-    "dcl-component": "1.0.0-beta.4",
+    "compression-webpack-plugin": "0.3.1",
+    "dcl-component": "1.0.0-beta.5",
     "es6-promise": "^3.0.2",
     "es6-shim": "0.35.0",
-    "eslint": "2.4.0",
+    "es7-reflect-metadata": "^1.6.0",
+    "eslint": "2.5.3",
     "exports-loader": "0.6.3",
     "file-loader": "0.8.5",
     "gulp": "3.9.1",
@@ -45,7 +46,7 @@
     "gulp-rimraf": "0.2.0",
     "gulp-size": "2.1.0",
     "gulp-tsc": "1.1.5",
-    "gulp-tslint": "4.3.3",
+    "gulp-tslint": "4.3.4",
     "html-loader": "0.4.3",
     "markdown-loader": "0.1.7",
     "marked": "0.3.5",
@@ -55,15 +56,14 @@
     "prismjs": "valorkin/prism",
     "prismjs-loader": "0.0.2",
     "raw-loader": "0.5.1",
-    "reflect-metadata": "0.1.2",
     "require-dir": "0.3.0",
     "rxjs": "5.0.0-beta.2",
     "ts-loader": "0.8.1",
     "tslint": "3.6.0",
-    "typings": "0.7.9",
+    "typings": "0.7.11",
     "typescript": "1.8.9",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1",
-    "zone.js": "0.6.5"
+    "zone.js": "0.6.8"
   }
 }
