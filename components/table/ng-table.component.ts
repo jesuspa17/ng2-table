@@ -6,8 +6,8 @@ import {NgTableSorting} from './ng-table-sorting.directive';
 
 @Component({
   selector: 'ngTable, [ngTable]',
-  inputs: ['rows', 'columns', 'config', 'id'],
-  outputs: ['tableChanged'],
+  inputs: ['rows', 'columns', 'config', 'id', 'all'],
+  outputs: ['tableChanged', 'allSelected'],
   styles: [`
     .table > thead > tr > th {
       cursor: pointer;
@@ -24,7 +24,8 @@ import {NgTableSorting} from './ng-table-sorting.directive';
            role="grid" style="width: 100%;">
       <thead>
       <tr role="row">
-        <th *ngFor="#column of columns" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
+        <th *ngFor="#column of columns; #i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
+          <input *ngIf="i === 0 && all" #allCheckbox type="checkbox" (click)="selectAll(allCheckbox)"/>
           {{column.title}}
           <i *ngIf="config && column.sort" class="pull-right glyphicon"
             [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}"></i>
@@ -48,9 +49,13 @@ export class NgTable {
   private _columns:Array<any> = [];
   public config:any = {};
   public id:string = 'id';
+  public all:boolean = false;
 
   // Outputs (Events)
   public tableChanged:EventEmitter<any> = new EventEmitter();
+
+  // Outputs (Events)
+  public allSelected:EventEmitter<any> = new EventEmitter();
 
   public set columns(values:Array<any>) {
     values.forEach((value) => {
@@ -86,5 +91,9 @@ export class NgTable {
       }
     });
     this.tableChanged.emit({sorting: this.configColumns});
+  }
+
+  selectAll(allCheckbox: ElementRef) {
+    this.tableChanged.emit({checked: allCheckbox.nativeElement.checked});
   }
 }
