@@ -25,7 +25,7 @@ import {NgTableSorting} from './ng-table-sorting.directive';
       <thead>
       <tr role="row">
         <th *ngFor="#column of columns; #i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
-          <input *ngIf="i === 0 && all" #allCheckbox type="checkbox" (click)="selectAll(allCheckbox)"/>
+          <input *ngIf="i === 0 && all" #allCheckbox type="checkbox" (click)="selectAll($event, allCheckbox)"/>
           {{column.title}}
           <i *ngIf="config && column.sort" class="pull-right glyphicon"
             [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}"></i>
@@ -93,7 +93,8 @@ export class NgTable {
     this.tableChanged.emit({sorting: this.configColumns});
   }
 
-  selectAll(allCheckbox: any) {
+  selectAll(event: MouseEvent, allCheckbox: any) {
+    event.stopPropagation();
     this.allSelected.emit({checked: allCheckbox.checked});
   }
 }
