@@ -93,7 +93,7 @@ export class NgTable {
     this.tableChanged.emit({sorting: this.configColumns});
   }
 
-  selectAll(allCheckbox: ElementRef) {
-    this.tableChanged.emit({checked: allCheckbox.nativeElement.checked});
+  selectAll(allCheckbox: any) {
+    this.tableChanged.emit({checked: allCheckbox.checked});
   }
 }
