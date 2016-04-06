@@ -94,6 +94,6 @@ export class NgTable {
   }
 
   selectAll(allCheckbox: any) {
-    this.tableChanged.emit({checked: allCheckbox.checked});
+    this.allSelected.emit({checked: allCheckbox.checked});
   }
 }
