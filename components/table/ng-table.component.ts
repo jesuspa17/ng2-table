@@ -24,8 +24,8 @@ import {NgTableSorting} from './ng-table-sorting.directive';
            role="grid" style="width: 100%;">
       <thead>
       <tr role="row">
-        <th *ngFor="let column of columns; #i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
-          <dcl-component *ngIf="i === cSelectAll?.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
+        <th *ngFor="let column of columns; let i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
+          <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
           {{column.title}}
           <i *ngIf="config && column.sort" class="pull-right glyphicon"
             [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}"></i>
