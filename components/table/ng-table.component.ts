@@ -33,11 +33,11 @@ import {NgTableSorting} from './ng-table-sorting.directive';
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let row of rows">
-        <td *ngFor="let column of columns">
-          <dcl-component [identifier]="{row: row[id], column: column.name}" [type]="column.component" [init]="column.init" [data]="row[column.name]"></dcl-component>
-        </td>
-      </tr>
+        <tr *ngFor="let row of rows" [ngStyle]="row?.ngStyle">
+          <td *ngFor="let column of columns">
+            <dcl-component [identifier]="{row: row[id], column: column.name}" [type]="column.component" [init]="column.init" [data]="row[column.name]"></dcl-component>
+          </td>
+        </tr>
       </tbody>
     </table>
 `,
