@@ -20,26 +20,28 @@ import {NgTableSorting} from './ng-table-sorting.directive';
     }
   `],
   template: `
-    <table class="table table-striped table-bordered dataTable"
-           role="grid" style="width: 100%;">
-      <thead>
-      <tr role="row">
-        <th *ngFor="let column of columns; let i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
-          <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
-          {{column.title}}
-          <i *ngIf="config && column.sort" class="pull-right glyphicon"
-            [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}"></i>
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let row of rows" [ngStyle]="row?.ngStyle">
-          <td *ngFor="let column of columns">
-            <dcl-component [identifier]="{row: row[id], column: column.name}" [type]="column.component" [init]="column.init" [data]="row[column.name]"></dcl-component>
-          </td>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered dataTable"
+             role="grid" style="width: 100%;">
+        <thead>
+        <tr role="row">
+          <th *ngFor="let column of columns; let i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
+            <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
+            {{column.title}}
+            <i *ngIf="config && column.sort" class="pull-right glyphicon"
+              [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}"></i>
+          </th>
         </tr>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of rows" [ngStyle]="row?.ngStyle">
+            <td *ngFor="let column of columns">
+              <dcl-component [identifier]="{row: row[id], column: column.name}" [type]="column.component" [init]="column.init" [data]="row[column.name]"></dcl-component>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 `,
   directives: [DCLComponent, NgTableSorting, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
