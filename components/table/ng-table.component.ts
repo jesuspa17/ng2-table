@@ -29,7 +29,8 @@ import {NgTableSorting} from './ng-table-sorting.directive';
             <div style="display: flex;">
               <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
               {{column.title}}
-              <i *ngIf="config && column.sort" class="order glyphicon" style="margin-left: 5px;"
+              <span *ngIf="config && column.sort" style="margen-left: 5px;"></span>
+              <i *ngIf="config && column.sort" class="glyphicon" style="margin-left: auto;"
                 [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}">
               </i>
             </div>

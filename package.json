@@ -1,6 +1,6 @@
 {
   "name": "ng2-editable-table",
-  "version": "1.0.0-rc.4",
+  "version": "1.0.0-rc.5",
   "description": "angular2 table components",
   "scripts": {
     "deploy": "NODE_ENV=production webpack -p --progress --color --optimize-minimize --optimize-dedupe --optimize-occurence-order",
