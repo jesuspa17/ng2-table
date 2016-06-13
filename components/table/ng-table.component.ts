@@ -26,10 +26,13 @@ import {NgTableSorting} from './ng-table-sorting.directive';
         <thead>
         <tr role="row">
           <th *ngFor="let column of columns; let i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
-            <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
-            {{column.title}}
-            <i *ngIf="config && column.sort" class="pull-right glyphicon"
-              [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}"></i>
+            <div style="display: flex;">
+              <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
+              {{column.title}}
+              <i *ngIf="config && column.sort" class="order glyphicon" style="margin-left: 5px;"
+                [ngClass]="{'glyphicon-chevron-down': column.sort === 'desc', 'glyphicon-chevron-up': column.sort === 'asc'}">
+              </i>
+            </div>
           </th>
         </tr>
         </thead>
