@@ -1,5 +1,5 @@
 import {Directive, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass} from '@angular/common';
+import {NgClass} from '@angular/common';
 
 // import {setProperty} from 'angular2/ts/src/core/forms/directives/shared';
 function setProperty(renderer:Renderer, elementRef:ElementRef, propName:string, propValue:any) {

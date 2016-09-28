@@ -1,8 +1,4 @@
 import {Component, Directive, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass, NgFor} from '@angular/common';
-import {DCLComponent} from 'dcl-component/dcl-component';
-
-import {NgTableSorting} from './ng-table-sorting.directive';
 
 @Component({
   selector: 'ngTable, [ngTable]',
@@ -27,7 +23,7 @@ import {NgTableSorting} from './ng-table-sorting.directive';
         <tr role="row">
           <th *ngFor="let column of columns; let i = index" [ngTableSorting]="config" [column]="column" (sortChanged)="onChangeTable($event)">
             <div style="display: flex;">
-              <dcl-component *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dcl-component>
+              <dclcomponent *ngIf="i === cSelectAll.index" [identifier]="{column: column.name}" [type]="cSelectAll.component" [init]="cSelectAll.init"></dclcomponent>
               {{column.title}}
               <span *ngIf="config && column.sort" style="margin-left: 5px;"></span>
               <i *ngIf="config && column.sort" class="glyphicon" style="margin-left: auto;"
@@ -40,14 +36,13 @@ import {NgTableSorting} from './ng-table-sorting.directive';
         <tbody>
           <tr *ngFor="let row of rows" [ngStyle]="row?.ngStyle">
             <td *ngFor="let column of columns">
-              <dcl-component [identifier]="{row: row[id], column: column.name}" [type]="column.component" [init]="column.init" [data]="row[column.name]"></dcl-component>
+              <dclcomponent [identifier]="{row: row[id], column: column.name}" [type]="column.component" [init]="column.init" [data]="row[column.name]"></dclcomponent>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
-`,
-  directives: [DCLComponent, NgTableSorting, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
+`
 })
 export class NgTable {
   // Table values

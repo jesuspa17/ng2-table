@@ -1,6 +1,5 @@
 import {Component, ComponentRef, EventEmitter, OnInit} from '@angular/core';
-import {CORE_DIRECTIVES, FORM_DIRECTIVES, NgClass, NgIf} from '@angular/common';
-import {PAGINATION_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import {NgClass, NgIf} from '@angular/common';
 
 import {NG_TABLE_DIRECTIVES} from '../../../ng2-table';
 
@@ -8,13 +7,9 @@ import {TableData} from './table-data';
 import {Buttons} from '../buttons/buttons';
 import {Editable} from '../editable/editable';
 
-// webpack html imports
-let template = require('./table-demo.html');
-
 @Component({
   selector: 'table-demo',
-  template: template,
-  directives: [NG_TABLE_DIRECTIVES, PAGINATION_DIRECTIVES, NgClass, NgIf, CORE_DIRECTIVES, FORM_DIRECTIVES]
+  template: require('./table-demo.html')
 })
 export class TableDemo implements OnInit {
 
@@ -116,15 +111,15 @@ export class TableDemo implements OnInit {
     let filteredData = this.changeFilter(this.data, this.config);
     let sortedData = this.changeSort(filteredData, this.config);
     this.rows = page && config.paging ? this.changePage(page, sortedData) : sortedData;
-    for (i = 0; i < this._arr.length; i++) {
+    /*for (let i = 0; i < this._arr.length; i++) {
       if (!this.rows.find((row) => row.id === this._arr[i])) {
         delete this._arr[i];
       }
-    }
+    }*/
     this.length = sortedData.length;
   }
 
-  private onDataInit(component: ComponentRef, identifier: any, data: any): void {
+  private onDataInit(component: ComponentRef<any>, identifier: any, data: any): void {
     component.instance.data = data;
     component.instance.auxValue = data;
     this._arr = this._arr || { };
@@ -134,7 +129,7 @@ export class TableDemo implements OnInit {
     this._arr[identifier.row] = editableColumns;
   }
 
-  private onCellInit(component: ComponentRef, identifier: any, id: any): void {
+  private onCellInit(component: ComponentRef<any>, identifier: any, id: any): void {
     console.log('onCellInit: ', identifier);
     component.instance.cancel.subscribe(() => {
       component.instance._editMode = false;
@@ -164,7 +159,7 @@ export class TableDemo implements OnInit {
     console.log('ok id: ' + id);
     let newRow: Array<any> = this.setEditable(row, false, true);
     let updateRow: any = this.data.find((rowAux) => rowAux.id === id);
-    for (i = 0; i < newRow.length; i++) {
+    for (let i = 0; i < newRow.length; i++) {
       updateRow[newRow[i]] = newRow[i];
     }
   }

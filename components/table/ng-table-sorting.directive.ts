@@ -1,5 +1,5 @@
 import {Directive, EventEmitter} from '@angular/core';
-import {FORM_DIRECTIVES, CORE_DIRECTIVES, NgClass} from '@angular/common';
+import {NgClass} from '@angular/common';
 
 @Directive({
   selector: '[ngTableSorting]',

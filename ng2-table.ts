@@ -5,3 +5,5 @@ export * from './components/table/ng-table-paging.directive';
 export * from './components/table/ng-table-sorting.directive';
 
 export * from './components/ng-table-directives';
+
+export {TableModule} from './components/ng-table.module';
