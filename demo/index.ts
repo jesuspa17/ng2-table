@@ -52,7 +52,7 @@ export class Demo {
 @NgModule({
   imports: [ BrowserModule, FormsModule, TabsModule, TableModule, PaginationModule ],
   declarations: [ Demo, TableSection, TableDemo, Editable, Buttons ],
-  entryComponents: [ Demo, TableSection, TableDemo, Editable, Buttons ],
+  entryComponents: [ Editable, Buttons ],
   bootstrap: [ Demo ]
 })
 export class AppModule { }
