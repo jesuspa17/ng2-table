@@ -1,6 +1,6 @@
 {
   "name": "ng2-editable-table",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "angular2 table components",
   "scripts": {
     "deploy": "NODE_ENV=production webpack -p --progress --color --optimize-minimize --optimize-dedupe --optimize-occurence-order",
@@ -35,7 +35,7 @@
     "@angular/forms": "2.2.3",
     "@angular/platform-browser": "2.2.3",
     "@angular/platform-browser-dynamic": "2.2.3",
-    "dcl-component": "2.2.3",
+    "dcl-component": "2.2.4",
     "es6-promise": "4.0.5",
     "es6-shim": "0.35.1",
     "es7-reflect-metadata": "1.6.0",
