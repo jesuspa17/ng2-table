@@ -50,7 +50,8 @@ export class Demo {
 }
 
 @NgModule({
-  imports: [ BrowserModule, FormsModule, TabsModule, TableModule, PaginationModule ],
+  imports: [
+    BrowserModule, FormsModule, TabsModule.forRoot(), TableModule, PaginationModule.forRoot() ],
   declarations: [ Demo, TableSection, TableDemo, Editable, Buttons ],
   entryComponents: [ Editable, Buttons ],
   bootstrap: [ Demo ]

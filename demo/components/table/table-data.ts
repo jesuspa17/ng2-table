@@ -3,7 +3,7 @@ export const TableData: Array<any> = [
     'id': 1,
     'name': 'Victoria Cantrell',
     'position': 'Integer Corporation',
-    'office': 'Croatia',
+    'office': null,
     'ext': '0839',
     'startDate': '2015/08/19',
     'salary': 208.178
