@@ -3,7 +3,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 
-import {TabsModule, PaginationModule} from 'ng2-bootstrap/ng2-bootstrap';
+import {TabsModule, PaginationModule} from 'ng2-bootstrap';
 
 import {DCLModule} from 'dcl-component/dcl-component';
 
