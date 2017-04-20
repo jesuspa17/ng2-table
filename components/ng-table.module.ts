@@ -1,7 +1,7 @@
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 
-import {DCLModule} from 'dcl-component/dcl-component';
+import {DCLModule} from 'ngx-dcl-component/dcl-component';
 
 import {NgTable} from './table/ng-table.component';
 import {NgTableFiltering} from './table/ng-table-filtering.directive';
