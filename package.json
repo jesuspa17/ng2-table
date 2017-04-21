@@ -1,6 +1,6 @@
 {
   "name": "ng2-editable-table",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "angular2 table components",
   "scripts": {
     "deploy": "NODE_ENV=production webpack -p --progress --color --optimize-minimize --optimize-dedupe --optimize-occurence-order",
@@ -29,13 +29,13 @@
   },
   "homepage": "https://github.com/valor-software/ng2-table#readme",
   "dependencies": {
-    "@angular/core": "4.0.2",
-    "@angular/common": "4.0.2",
-    "@angular/compiler": "4.0.2",
-    "@angular/forms": "4.0.2",
-    "@angular/platform-browser": "4.0.2",
-    "@angular/platform-browser-dynamic": "4.0.2",
-    "ngx-dcl-component": "4.0.2",
+    "@angular/core": "^4.0.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "ngx-dcl-component": "4.0.3",
     "es6-promise": "4.1.0",
     "es6-shim": "0.35.3",
     "es7-reflect-metadata": "1.6.0",
