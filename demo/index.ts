@@ -3,9 +3,9 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserModule} from '@angular/platform-browser';
 import {FormsModule} from '@angular/forms';
 
-import {TabsModule, PaginationModule} from 'ng2-bootstrap';
+import {TabsModule, PaginationModule} from 'ngx-bootstrap';
 
-import {DCLModule} from 'dcl-component/dcl-component';
+import {DCLModule} from 'ngx-dcl-component/dcl-component';
 
 import {TableModule} from '../components/ng-table.module';
 import {NgTable} from '../components/table/ng-table.component';
