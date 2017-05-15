@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 import {TabsModule, PaginationModule} from 'ngx-bootstrap';
 
-import {DCLModule} from 'ngx-dcl-component/dcl-component';
+import {DCLModule} from 'dcl-component/dcl-component';
 
 import {TableModule} from '../components/ng-table.module';
 import {NgTable} from '../components/table/ng-table.component';

@@ -1,25 +1,32 @@
 {
-  "version": "2.0.3",
+  "version": "2.3.2",
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "sourceMap": true,
-    "declaration": true,
-    "removeComments": true,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "listFiles": false,
-    "noLib": false,
-    "noImplicitAny": true,
-    "noEmit": false,
-    "noEmitOnError": true,
-    "suppressImplicitAnyIndexErrors": true
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noEmitHelpers": false,
+    "strictNullChecks": false,
+    "lib": [ "es6", "dom" ],
+    "types": [
+      "hammerjs",
+      "jasmine",
+      "node",
+      "selenium-webdriver",
+      "source-map",
+      "uglify-js",
+      "webpack"
+    ]
   },
   "exclude": [
-    "node_modules"
+    "./node_modules",
+    "dist"
   ],
   "files": [
-    "ng2-table.ts",
-    "typings/index.d.ts"
+    "ng2-table.ts"
   ]
 }
