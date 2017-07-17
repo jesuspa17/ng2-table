@@ -36,7 +36,7 @@
     "@angular/platform-browser": "4.3.0",
     "@angular/platform-browser-dynamic": "4.3.0",
     "core-js": "2.4.1",
-    "dcl-component": "git+https://github.com/jesuspa17/dcl-component.git#69afeaf",
+    "dcl-component": "4.3.0",
     "es6-promise": "4.1.1",
     "es6-shim": "0.35.3",
     "es7-reflect-metadata": "1.6.0",
